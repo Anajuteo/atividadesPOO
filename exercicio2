@@ -1,0 +1,49 @@
+
+import java.util.Scanner;
+
+public class exercicio2 {
+
+	public static void main(String[] args) {
+		
+		@SuppressWarnings("resource")
+		Scanner entrada = new Scanner(System.in);
+		
+		float salario;
+		float novo_salario = 0;
+		float porcentagem_aumento = 0;
+		float valor_aumento = 0;
+		
+		System.out.println("Insira o valor do seu salário atual: ");
+		salario = entrada.nextFloat();
+		
+		if (salario <= 280)
+			porcentagem_aumento = 0.20f;
+		if ((salario >= 280) && (salario <= 700))
+			porcentagem_aumento = 0.15f;
+		if ((salario >= 700) && (salario <= 1500))
+			porcentagem_aumento = 0.10f;
+		if (salario >= 1500)
+			porcentagem_aumento = 0.05f;
+			
+											
+		novo_salario = (salario + (porcentagem_aumento * salario));
+		valor_aumento = (porcentagem_aumento * salario);
+		
+		if (salario <= 280)
+			novo_salario = (salario + (0.20f * salario));
+		else if ((salario >= 280) && (salario <= 700))
+			novo_salario = (salario + (0.15f * salario));
+		else if ((salario >= 700) && (salario <= 1500))
+			novo_salario = (salario + (0.10f * salario));
+		else if (salario >= 1500)
+			novo_salario = (salario + (0.05f * salario));
+			
+			
+			System.out.printf("Salário antes do reajuste: ", + salario);
+			System.out.printf("Novo salário: ", + novo_salario);
+			System.out.printf("Porcentagem de aumento: ", + porcentagem_aumento);
+			System.out.printf("Valor aumento: ", + valor_aumento);
+							
+		
+	}
+}
